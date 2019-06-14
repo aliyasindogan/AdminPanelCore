@@ -1,0 +1,83 @@
+﻿@model IEnumerable<AdminPanelCore.ENTITIES.ComplexTypes.CategoryDetail>
+@{
+    ViewBag.Title = "Kategori Listesi ";
+}
+<div class="container-fluid mb-60">
+    <div class="icerik">
+        <h3 class="sayfaBasligi"><i class="fa fa-list-ul"></i>&nbsp;Kategori Listesi  </h3>
+        <div class="pull-right right-button">
+            <a href="@Url.Action("Create","Category")" class="btn btn-dark"><i class="fa fa-plus"></i>&nbsp;Kategori Ekle</a>
+        </div>
+        <table class="table table-bordered table-hover table-condensed">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubCategoryName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryTypeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SeoLink)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DisplayOrder)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsDisplay)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+                <th>İşlemler</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubCategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryTypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeoLink)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DisplayOrder)
+                    </td>
+                    <td>
+                        @if (item.IsDisplay)
+                        {
+                            <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                        }
+                        else
+                        {
+                            <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                        }
+                    </td>
+                    <td>
+                        @if (item.IsActive)
+                        {
+                            <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                        }
+                        else
+                        {
+                            <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzelt", "Edit", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
+                        @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
+                        @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

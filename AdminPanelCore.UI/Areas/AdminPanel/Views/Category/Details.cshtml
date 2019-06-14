@@ -1,0 +1,113 @@
+﻿@model AdminPanelCore.ENTITIES.ComplexTypes.CategoryDetail
+
+@{
+    ViewBag.Title = "Kategori Detay";
+}
+
+<div class="container-fluid mb-60">
+    <div class="icerik">
+        <h3 class="sayfaBasligi"><i class="fa fa-eye"></i>&nbsp;Kategori Detay  </h3>
+        <hr />
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CategoryName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SubCategoryName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SubCategoryName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CategoryTypeName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CategoryTypeName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SeoLink)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SeoLink)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MetaDescription)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MetaDescription)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MetaKeywords)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MetaKeywords)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DisplayOrder)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DisplayOrder)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsDisplay)
+                </dt>
+                <dd>
+                     @if (Model.IsDisplay)
+                    {
+                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                    }
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </dt>
+                <dd>
+                    @if (Model.IsActive)
+                    {
+                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                    }
+                </dd>
+
+            </dl>
+        </div>
+        <p class="ml-20">
+            @Html.ActionLink("Kategori Düzenleye Git", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" })
+            @Html.ActionLink("Kategori Listesine Git", "Index", null, new { @class = "btn btn-dark" })
+        </p>
+        <br />
+        <br />
+    </div>
+</div>

@@ -1,0 +1,258 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{879FA56D-3B3B-489C-A67A-1B9777F9712D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdminPanelCore.UI</RootNamespace>
+    <AssemblyName>AdminPanelCore.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\AdminPanel\Content\bootstrap-theme.css" />
+    <Content Include="Areas\AdminPanel\Content\bootstrap-theme.min.css" />
+    <Content Include="Areas\AdminPanel\Content\bootstrap.css" />
+    <Content Include="Areas\AdminPanel\Content\bootstrap.min.css" />
+    <Content Include="Areas\AdminPanel\Content\font-awesome.css" />
+    <Content Include="Areas\AdminPanel\Content\font-awesome.min.css" />
+    <Content Include="Areas\AdminPanel\Content\signin.css" />
+    <Content Include="Areas\AdminPanel\Content\site.css" />
+    <Content Include="Areas\AdminPanel\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\AdminPanel\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\AdminPanel\Scripts\bootstrap.js" />
+    <Content Include="Areas\AdminPanel\Scripts\bootstrap.min.js" />
+    <None Include="Areas\AdminPanel\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery-1.10.2.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery-1.10.2.min.js" />
+    <None Include="Areas\AdminPanel\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery-1.9.1.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery-1.9.1.min.js" />
+    <None Include="Areas\AdminPanel\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery.validate.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery.validate.min.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Areas\AdminPanel\Content\pricing.css" />
+    <Content Include="Global.asax" />
+    <Content Include="img\image-not.png" />
+    <Content Include="Web.config" />
+    <Content Include="Areas\AdminPanel\Views\Account\Login.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Partial\BreadcrumbPartialView.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Partial\FooterPartialView.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Partial\HeaderPartialView.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Slider\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Slider\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Slider\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Slider\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Slider\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\User\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\User\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\User\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\User\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\User\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\PartialViews\HeaderPartial.cshtml" />
+    <Content Include="Views\PartialViews\FooterPartial.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\AdminPanel\AdminPanelAreaRegistration.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\AccountController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\PartialController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\SliderController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\UserController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialViewsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\AdminPanel\Views\web.config" />
+    <Content Include="Areas\AdminPanel\Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\AdminPanel\Content\bootstrap-theme.min.css.map" />
+    <Content Include="Areas\AdminPanel\Content\bootstrap.css.map" />
+    <Content Include="Areas\AdminPanel\Content\bootstrap.min.css.map" />
+    <Content Include="Areas\AdminPanel\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\AdminPanel\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\AdminPanel\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\AdminPanel\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\AdminPanel\fonts\FontAwesome.otf" />
+    <Content Include="Areas\AdminPanel\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\AdminPanel\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\AdminPanel\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\AdminPanel\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Areas\AdminPanel\Scripts\jquery-1.9.1.min.map" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="upload\largeimage\" />
+    <Folder Include="upload\middleimage\" />
+    <Folder Include="upload\smallimage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdminPanelCore.BLL\AdminPanelCore.BLL.csproj">
+      <Project>{D3D06BF7-03F2-4A9F-B593-FB0EB8BFF14C}</Project>
+      <Name>AdminPanelCore.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdminPanelCore.ENTITIES\AdminPanelCore.ENTITIES.csproj">
+      <Project>{478F2332-13BE-4607-9341-43F7B0ED1A89}</Project>
+      <Name>AdminPanelCore.ENTITIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CORE\CORE.csproj">
+      <Project>{053CD139-060C-47F2-B212-C6C1598DA790}</Project>
+      <Name>CORE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61475</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61475/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

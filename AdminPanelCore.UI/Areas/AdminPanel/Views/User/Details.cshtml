@@ -1,0 +1,105 @@
+﻿@model AdminPanelCore.ENTITIES.ComplexTypes.UserDetail
+
+@{
+    ViewBag.Title = "Kullanıcı Detay";
+}
+
+<div class="container-fluid mb-60">
+    <div class="icerik">
+        <h3 class="sayfaBasligi"><i class="fa fa-eye"></i>&nbsp;C </h3>
+        <hr />
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SurName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SurName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                @*<dt>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Password)
+                    </dd>*@
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RoleName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RoleName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DisplayOrder)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DisplayOrder)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsDisplay)
+                </dt>
+                <dd>
+                    @if (Model.IsDisplay)
+                    {
+                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                    }
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </dt>
+                <dd>
+                    @if (Model.IsActive)
+                    {
+                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                    }
+                </dd>
+
+
+            </dl>
+        </div>
+        <p class="ml-20">
+            @Html.ActionLink("Kullanıcı Düzenleye Git", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" })
+            @Html.ActionLink("Kullanıcı Listesine Git", "Index", null, new { @class = "btn btn-dark" })
+        </p>
+        <br />
+        <br />
+    </div>
+</div>

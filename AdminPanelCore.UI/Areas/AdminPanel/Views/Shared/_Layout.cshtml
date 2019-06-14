@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Areas/AdminPanel/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/AdminPanel/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Areas/AdminPanel/Content/site.css" rel="stylesheet" />
+    <script src="~/Areas/AdminPanel/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Areas/AdminPanel/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    @{Html.RenderAction("HeaderPartialView", "Partial");}
+    @*@{Html.RenderAction("BreadcrumbPartialView","Partial"); }*@
+    @RenderBody()
+    @{Html.RenderAction("FooterPartialView", "Partial");}
+</body>
+</html>
+

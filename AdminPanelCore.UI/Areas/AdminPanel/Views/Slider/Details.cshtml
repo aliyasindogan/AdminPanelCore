@@ -1,0 +1,87 @@
+﻿@model AdminPanelCore.ENTITIES.Concrete.Slider
+
+@{
+    ViewBag.Title = "Slider Detay";
+}
+<div class="container-fluid mb-60">
+    <div class="icerik">
+        <h3 class="sayfaBasligi"><i class="fa fa-eye"></i>&nbsp;Slider Detay  </h3>
+        <hr />
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    Resim
+                </dt>
+
+                <dd>
+                    <img src="@Model.SliderImageUrlLarge" alt="Alternate Text" width="125" />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SliderNewsUrl)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SliderNewsUrl)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SliderTitle)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SliderTitle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SliderDescription)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SliderDescription)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DisplayOrder)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DisplayOrder)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsDisplay)
+                </dt>
+                <dd>
+                    @if (Model.IsDisplay)
+                    {
+                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                    }
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </dt>
+                <dd>
+                    @if (Model.IsActive)
+                    {
+                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                    }
+                </dd>
+
+            </dl>
+        </div>
+        <p class="ml-20">
+            @Html.ActionLink("Slider Düzenleye Git", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" })
+            @Html.ActionLink("Slider Listesine Git", "Index", null, new { @class = "btn btn-dark" })
+        </p>
+        <br />
+        <br />
+    </div>
+</div>

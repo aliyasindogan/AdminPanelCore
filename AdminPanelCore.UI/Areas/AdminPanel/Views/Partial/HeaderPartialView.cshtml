@@ -1,0 +1,60 @@
+﻿<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">ADMIN&nbsp;<i class="fa fa-dashboard"></i>&nbsp;PANEL</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a></li>
+                <li> <a href="@Url.Action("Index","Category")"><i class="fa fa-list"></i>&nbsp;KATEGORİLER</a></li>
+                <li> <a href="@Url.Action("Index","User")"><i class="fa fa-users"></i>&nbsp;KULLANICILAR</a></li>
+                <li> <a href="@Url.Action("Index","Slider")"><i class="fa fa-picture-o"></i>&nbsp;SLIDER</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-globe"></i>&nbsp;KURUMSAL <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">İletişim</a></li>
+                        <li><a href="#">Banka Hesapları</a></li>
+                        <li><a href="#">Şubeler</a></li>
+                        <li><a href="#">Referanslarımız</a></li>
+                        <li><a href="#">Takımımız</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-cogs"></i>&nbsp;AYARLAR <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Resim Boyutları</a></li>
+                        <li><a href="#">E-Posta Yetkilendirme</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i>&nbsp;@ViewBag.AdSoyad&nbsp;[&nbsp;Aktif&nbsp;<i class="fa fa-circle text-success"></i>&nbsp;]<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        @*<li>
+                                <a href="/Admin/Account/LogOut"><i class="fa fa-user"></i>&nbsp;Profil</a>
+                            </li>*@
+                        <li>
+                            @Html.ActionLink("Oturumu Kapat", "LogOut", "Account")
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
