@@ -10,7 +10,7 @@ namespace AdminPanelCore.DAL.Concrete.Contexts
     {
         public void InitializeDatabase(DatabaseContext context)
         {
-            if (context.Database.Exists())
+            if (context.Database.Exists()) //Database varmı? Var ise kayıtları ekle
             {
                 try
                 {
@@ -110,7 +110,7 @@ namespace AdminPanelCore.DAL.Concrete.Contexts
                         {
                             CreatedDate = DateTime.Now,
                             CreatedUserID = 1,
-                            DisplayOrder = 2,
+                            DisplayOrder = 3,
                             Email = "user@gmail.com",
                             IsDisplay = true,
                             FirstName = "user",
@@ -175,6 +175,10 @@ namespace AdminPanelCore.DAL.Concrete.Contexts
                 {
                     throw;
                 }
+            }
+            else //Yok ise
+            {
+                context.Database.Create(); //Database yok ise oluştur.
             }
         }
     }
