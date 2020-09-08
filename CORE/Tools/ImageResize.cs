@@ -1,4 +1,4 @@
-﻿using AdminPanelCore.CORE.Entities.Concrete;
+﻿using CORE.Entities.Concrete;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -28,8 +28,8 @@ namespace AdminPanelCore.CORE.Tools
                 string extension = "";
                 if (fuResim.HasFile)
                 {
-
                     #region buyukresim
+
                     extension = Path.GetExtension(fuResim.PostedFile.FileName);
                     //resimadi = fuResim.FileName;
                     imageName = Guid.NewGuid().ToString() + extension; ;
@@ -64,7 +64,8 @@ namespace AdminPanelCore.CORE.Tools
                         }
                     }
 
-                    #endregion
+                    #endregion buyukresim
+
                     #region küçükresim
 
                     int Donusturme1 = 100;
@@ -94,8 +95,11 @@ namespace AdminPanelCore.CORE.Tools
                             fuResim.SaveAs(HttpContext.Current.Server.MapPath(ConstantParameter.SmallImageFilePath + imageName));
                         }
                     }
-                    #endregion
+
+                    #endregion küçükresim
+
                     #region ortaresim
+
                     int Donusturme2 = 400;
                     using (Bitmap OrjinalResim2 = bmp2)
                     {
@@ -122,9 +126,9 @@ namespace AdminPanelCore.CORE.Tools
                         {
                             fuResim.SaveAs(HttpContext.Current.Server.MapPath(ConstantParameter.MiddleImageFilePath + imageName));
                         }
-                        #endregion
-                    }
 
+                        #endregion ortaresim
+                    }
                 }//if has.file son
                 return imageName;
             }
@@ -133,6 +137,7 @@ namespace AdminPanelCore.CORE.Tools
                 return "";
             }
         }
+
         /// <summary>
         /// Tek Resim boyutlandırma yapılmaktadır.
         /// </summary>
@@ -179,7 +184,6 @@ namespace AdminPanelCore.CORE.Tools
             }
         }
 
-
         //ResizeImage(400, File1.FileContent, path);
         public static void ResizeStream(int imageSize, Stream filePath, string outputPath)
         {
@@ -214,7 +218,5 @@ namespace AdminPanelCore.CORE.Tools
             thumbnailBitmap.Dispose();
             image.Dispose();
         }
-
-
     }
 }

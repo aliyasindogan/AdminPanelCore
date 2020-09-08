@@ -10,10 +10,10 @@ namespace AdminPanelCore.ENTITIES.ComplexTypes
         public string UserName { get; set; }
 
         [Required, Display(Name = "Adı")]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
 
         [Required, Display(Name = "Soyadı")]
-        public string SurName { get; set; }
+        public string LastName { get; set; }
 
         public string Email { get; set; }
 

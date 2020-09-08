@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdminPanelCore.CORE.Tools
+﻿namespace AdminPanelCore.CORE.Tools
 {
-  public static class SeoLink
+    public static class SeoLink
     {
-       /// <summary>
-       /// Linki Seo ye uyumlu hale getiriyor
-       /// </summary>
-       /// <param name="keyword">Url</param>
-       /// <returns></returns>
+        /// <summary>
+        /// Linki Seo ye uyumlu hale getiriyor
+        /// </summary>
+        /// <param name="keyword">Url</param>
+        /// <returns></returns>
         public static string SeoFrendlyLink(string keyword)
         {
             string newKeyword = keyword.ToString();

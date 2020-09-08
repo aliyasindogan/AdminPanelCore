@@ -1,4 +1,4 @@
-﻿using AdminPanelCore.CORE.Entities.Abstarct;
+﻿using CORE.Entities.Abstarct;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +11,6 @@ namespace AdminPanelCore.CORE.DataAccess.EntityFramework
     where TEntity : class, IEntity, new()
     where TContext : DbContext, new()
     {
-
         public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var context = new TContext())
@@ -110,6 +109,7 @@ namespace AdminPanelCore.CORE.DataAccess.EntityFramework
                 return context.Set<TEntity>().Where(filter).Max(column);
             }
         }
+
         public int? Min(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, Nullable<int>>> column)
         {
             using (var context = new TContext())
@@ -141,6 +141,5 @@ namespace AdminPanelCore.CORE.DataAccess.EntityFramework
                 return context.Set<TEntity>().Where(filter).Any();
             }
         }
-
     }
 }

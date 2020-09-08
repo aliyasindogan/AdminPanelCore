@@ -1,7 +1,11 @@
-﻿namespace AdminPanelCore.CORE.Entities.Abstarct
+﻿namespace CORE.Entities.Abstarct
 {
+    public interface IEntity<T>
+    {
+        T Id { get; set; }
+    }
+
     public interface IEntity
     {
-         int Id { get; set; }
     }
 }

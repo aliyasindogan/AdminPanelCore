@@ -1,4 +1,4 @@
-﻿@model IEnumerable< AdminPanelCore.ENTITIES.Concrete.Slider >
+﻿@model IEnumerable< AdminPanelCore.ENTITIES.Concrete.Slider>
 
 @{
     ViewBag.Title = "Slider Listesi ";
@@ -45,9 +45,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.IsDisplay)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsActive)
-                </th>
+                 
                 <th>İşlemler</th>
             </tr>
 
@@ -85,16 +83,7 @@
                         <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
                     }
                 </td>
-                <td>
-                    @if (item.IsActive)
-                    {
-                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-                    }
-                    else
-                    {
-                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-                    }
-                </td>
+                
                 <td>
                     @Html.ActionLink("Düzelt", "Edit", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
                     @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
@@ -102,7 +91,6 @@
                 </td>
             </tr>
             }
-
         </table>
     </div>
 </div>

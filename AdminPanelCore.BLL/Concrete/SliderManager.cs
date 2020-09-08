@@ -85,7 +85,6 @@ namespace AdminPanelCore.BLL.Concrete
         public Slider Update(Slider entity)
         {
             return _sliderDal.Update(entity);
-
         }
     }
 }

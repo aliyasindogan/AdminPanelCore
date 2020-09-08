@@ -9,7 +9,7 @@ namespace AdminPanelCore.BLL.Concrete
 {
     public class UserRoleManager : IUserRoleService
     {
-        IUserRoleDal _userRoleDal;
+        private IUserRoleDal _userRoleDal;
 
         public UserRoleManager(IUserRoleDal userRoleDal)
         {
@@ -28,7 +28,7 @@ namespace AdminPanelCore.BLL.Concrete
 
         public void Delete(UserRole entity)
         {
-             _userRoleDal.Delete(entity);
+            _userRoleDal.Delete(entity);
         }
 
         public UserRole GetById(Expression<Func<UserRole, bool>> filter)
@@ -38,7 +38,7 @@ namespace AdminPanelCore.BLL.Concrete
 
         public List<UserRole> GetList(Expression<Func<UserRole, bool>> filter = null)
         {
-              return _userRoleDal.GetList(filter);
+            return _userRoleDal.GetList(filter);
         }
 
         public int? Max(Expression<Func<UserRole, bool>> filter, Expression<Func<UserRole, int?>> column)

@@ -33,8 +33,8 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                 DateTime.Now.AddDays(30),
                 _userService.GetUserRoles(_user).Select(u => u.RoleName).ToArray(),
                 false,
-                _user.Name,
-                _user.SurName);
+                _user.FirstName,
+                _user.LastName);
                 return RedirectToAction("Index", "Dashboard");
             }
             return View();
@@ -45,6 +45,5 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-
     }
 }

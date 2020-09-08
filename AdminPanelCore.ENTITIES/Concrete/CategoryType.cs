@@ -1,14 +1,19 @@
-﻿using AdminPanelCore.CORE.Entities.Abstarct;
-using AdminPanelCore.CORE.Entities.Concrete;
+﻿using CORE.Entities.Abstarct;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AdminPanelCore.ENTITIES.Concrete
 {
-    [Table("CategoryType")]
-    public class CategoryType : SoftDeleteEntity, IDisplayEntity
+    public class CategoryType : IBaseEntity
     {
+        public CategoryType()
+        {
+            Categories = new HashSet<Category>();
+        }
+
+        public int Id { get; set; }
         public string CategoryTypeName { get; set; }
-        public bool IsDisplay { get; set; }
-        public int DisplayOrder { get; set; }
+        public string Description { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
     }
 }

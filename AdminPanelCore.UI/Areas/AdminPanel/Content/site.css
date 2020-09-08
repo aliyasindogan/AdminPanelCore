@@ -92,9 +92,11 @@ a {
     padding: 10px 15px 10px 10px;
     margin: 0px
 }
-.sayfaBasligi_hr{
+
+.sayfaBasligi_hr {
     margin: 0px !important;
 }
+
 .icerik {
     background-color: #fff;
     margin-top: 20px !important;
@@ -191,9 +193,11 @@ dropdown-menu:before {
 .mb-50 {
     margin-bottom: 60px !important;
 }
+
 .mb-60 {
     margin-bottom: 50px !important;
 }
+
 .mt-5 {
     margin-top: 5px !important;
 }
@@ -233,12 +237,15 @@ dropdown-menu:before {
 .m-0 {
     margin: 0px !important;
 }
+
 .text-bold {
     font-weight: bold !important;
 }
+
 .panel-dark {
     border-color: #343a40;
 }
+
     .panel-dark > .panel-heading {
         color: #fff;
         background-color: #343a40;

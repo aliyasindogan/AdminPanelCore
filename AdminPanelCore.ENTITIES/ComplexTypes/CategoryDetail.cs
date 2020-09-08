@@ -6,7 +6,7 @@ namespace AdminPanelCore.ENTITIES.ComplexTypes
     {
         public int Id { get; set; }
 
-        [Display(Name="Kategori")]
+        [Display(Name = "Kategori")]
         public string CategoryName { get; set; }
 
         [Display(Name = "AltKategori")]

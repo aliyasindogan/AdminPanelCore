@@ -9,7 +9,6 @@ namespace AdminPanelCore.UI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
             routes.MapRoute(
              name: "urunler",
              url: "urunler",

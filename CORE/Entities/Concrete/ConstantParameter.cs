@@ -1,22 +1,25 @@
-﻿namespace AdminPanelCore.CORE.Entities.Concrete
+﻿namespace CORE.Entities.Concrete
 {
-    public  class ConstantParameter
+    public class ConstantParameter
     {
         /// <summary>
         /// Küçük Resim Dosya Yolu
         /// </summary>
         public const string MainImageFilePath = "/upload";
+
         /// <summary>
         /// Büyük Resim Dosya Yolu
         /// </summary>
-        public  const string LargeImageFilePath = "/upload/largeimage/";
+        public const string LargeImageFilePath = "/upload/largeimage/";
+
         /// <summary>
         /// Orta Resim Dosya Yolu
         /// </summary>
-        public   const string MiddleImageFilePath = "/upload/middleimage/";
+        public const string MiddleImageFilePath = "/upload/middleimage/";
+
         /// <summary>
         /// Küçük Resim Dosya Yolu
         /// </summary>
-        public   const string SmallImageFilePath = "/upload/smallimage/";
+        public const string SmallImageFilePath = "/upload/smallimage/";
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace AdminPanelCore.CORE.Entities.Abstarct
+﻿namespace CORE.Entities.Abstarct
 {
     public interface IDisplayEntity
     {

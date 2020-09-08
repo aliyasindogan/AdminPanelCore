@@ -1,6 +1,7 @@
 ﻿using AdminPanelCore.CORE.DataAccess.EntityFramework;
 using AdminPanelCore.DAL.Abstarct;
-using AdminPanelCore.ENTITIES.Abstarct.Enum;
+using AdminPanelCore.DAL.Concrete.Contexts;
+using AdminPanelCore.ENTITIES.Abstarct.Enums;
 using AdminPanelCore.ENTITIES.ComplexTypes;
 using AdminPanelCore.ENTITIES.Concrete;
 using System.Collections.Generic;
@@ -22,8 +23,6 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
                                   CategoryName = c.CategoryName,
                                   CategoryTypeName = ct.CategoryTypeName,
                                   DisplayOrder = c.DisplayOrder,
-                                  IsActive = c.IsActive,
-                                  IsDisplay = c.IsDisplay,
                                   SubCategoryName = context.Categories.FirstOrDefault(x => x.Id == c.SubCategoryID).CategoryName,
                                   MetaDescription = c.MetaDescription,
                                   MetaKeywords = c.MetaKeywords,
@@ -38,7 +37,6 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-
                 if (RolID == (int)Roles.Admin)
                 {
                     //Admin de admin ve web kategorileri geliyor
@@ -50,14 +48,13 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
                                       CategoryName = c.CategoryName,
                                       CategoryTypeName = ct.CategoryTypeName,
                                       DisplayOrder = c.DisplayOrder,
-                                      IsActive = c.IsActive,
                                       IsDisplay = c.IsDisplay,
                                       SubCategoryName = context.Categories.FirstOrDefault(x => x.Id == c.SubCategoryID).CategoryName,
                                       MetaDescription = c.MetaDescription,
                                       MetaKeywords = c.MetaKeywords,
                                       Title = c.Title,
-                                      CategoryTypeID=c.CategoryTypeID,
-                                       SeoLink = c.SeoLink
+                                      CategoryTypeID = c.CategoryTypeID,
+                                      SeoLink = c.SeoLink
                                   }).Where(x => x.CategoryTypeID != 4);
                     return result.ToList();
                 }
@@ -72,14 +69,13 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
                                       CategoryName = c.CategoryName,
                                       CategoryTypeName = ct.CategoryTypeName,
                                       DisplayOrder = c.DisplayOrder,
-                                      IsActive = c.IsActive,
                                       IsDisplay = c.IsDisplay,
                                       SubCategoryName = context.Categories.FirstOrDefault(x => x.Id == c.SubCategoryID).CategoryName,
                                       MetaDescription = c.MetaDescription,
                                       MetaKeywords = c.MetaKeywords,
                                       Title = c.Title,
                                       CategoryTypeID = c.CategoryTypeID,
-                                       SeoLink = c.SeoLink
+                                      SeoLink = c.SeoLink
                                   });
                     return result.ToList();
                 }

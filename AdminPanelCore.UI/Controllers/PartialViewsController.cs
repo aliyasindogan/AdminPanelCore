@@ -1,5 +1,5 @@
 ﻿using AdminPanelCore.BLL.Abstarct;
-using AdminPanelCore.ENTITIES.Abstarct.Enum;
+using AdminPanelCore.ENTITIES.Abstarct.Enums;
 using AdminPanelCore.ENTITIES.Concrete;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace AdminPanelCore.UI.Controllers
         // GET: Partial
         public ActionResult HeaderPartial()
         {
-            var category = _categoryService.GetList(x=> x.CategoryTypeID==(int)CategoryTypes.WebKurumsal);
+            var category = _categoryService.GetList(x => x.CategoryTypeID == (int)CategoryTypes.WebCorporateMenu);
             return PartialView(category);
         }
 
@@ -29,5 +29,5 @@ namespace AdminPanelCore.UI.Controllers
         {
             return PartialView();
         }
-   
-} } 
+    }
+}

@@ -1,13 +1,11 @@
-﻿using AdminPanelCore.CORE.Entities.Abstarct;
-using AdminPanelCore.CORE.Entities.Concrete;
+﻿using CORE.Entities.Concrete;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AdminPanelCore.ENTITIES.Concrete
 {
-    [Table("Slider")]
-    public class Slider : SoftDeleteEntity, IDisplayEntity
+    public class Slider : AuditEntity
     {
         [Required, Display(Name = "Slider Başlık")]
         public string SliderTitle { get; set; }
@@ -23,12 +21,6 @@ namespace AdminPanelCore.ENTITIES.Concrete
 
         [Display(Name = "Slider Kç Resim (285x100px)")]
         public string SliderImageUrlSmall { get; set; }
-
-        [Required, Display(Name = "Sıra No")]
-        public int DisplayOrder { get; set; }
-
-        [Required, Display(Name = "Görüntülensin Mi?")]
-        public bool IsDisplay { get; set; }
 
         [Display(Name = "Başlangıç Tarihi")]
         public DateTime StartDate { get; set; }

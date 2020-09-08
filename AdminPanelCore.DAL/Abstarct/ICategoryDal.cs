@@ -8,6 +8,7 @@ namespace AdminPanelCore.DAL.Abstarct
     public interface ICategoryDal : IRepository<Category>
     {
         List<CategoryDetail> GetCategoryDetails(int RolID);
+
         CategoryDetail GetByIdCategoryDetails(int? id);
     }
 }

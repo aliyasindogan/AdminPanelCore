@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstarct\Enum\CategoryTypes.cs" />
-    <Compile Include="Abstarct\Enum\Roles.cs" />
+    <Compile Include="Abstarct\Enums\CategoryTypes.cs" />
+    <Compile Include="Abstarct\Enums\Roles.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\CategoryType.cs" />
     <Compile Include="Concrete\Role.cs" />

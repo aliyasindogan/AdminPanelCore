@@ -1,6 +1,7 @@
 ﻿using AdminPanelCore.BLL.Abstarct;
 using AdminPanelCore.BLL.Concrete;
 using AdminPanelCore.DAL.Abstarct;
+using AdminPanelCore.DAL.Concrete.Contexts;
 using AdminPanelCore.DAL.Concrete.EntityFramework;
 using AdWebTemplate.Business.Abstarct;
 using Ninject.Modules;
@@ -8,7 +9,7 @@ using System.Data.Entity;
 
 namespace AdWebTemplate.Business.DependencyResolvers.Ninject
 {
-    public class BusinessModule:NinjectModule
+    public class BusinessModule : NinjectModule
     {
         public override void Load()
         {
@@ -31,7 +32,6 @@ namespace AdWebTemplate.Business.DependencyResolvers.Ninject
             Bind<ISliderDal>().To<EfSliderDal>().InSingletonScope();
 
             Bind<DbContext>().To<DatabaseContext>().InSingletonScope();
-
         }
     }
 }

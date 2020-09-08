@@ -10,6 +10,7 @@ namespace AdminPanelCore.BLL.Concrete
     public class CategoryTypeManager : ICategoryTypeService
     {
         private ICategoryTypeDal _categoryTypeDal;
+
         public CategoryTypeManager(ICategoryTypeDal categoryTypeDal)
         {
             _categoryTypeDal = categoryTypeDal;

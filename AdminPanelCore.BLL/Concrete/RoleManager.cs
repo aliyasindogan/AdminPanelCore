@@ -7,7 +7,6 @@ using System.Linq.Expressions;
 
 namespace AdminPanelCore.BLL.Concrete
 {
-
     public class RoleManager : IRoleService
     {
         private IRoleDal _roleDal;

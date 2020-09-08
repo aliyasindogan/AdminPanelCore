@@ -1,6 +1,6 @@
 ﻿using AdminPanelCore.BLL.Abstarct;
-using AdminPanelCore.CORE.Entities.Concrete;
 using AdminPanelCore.ENTITIES.Concrete;
+using CORE.Entities.Concrete;
 using System;
 using System.IO;
 using System.Net;
@@ -12,16 +12,16 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
 {
     public class SliderController : Controller
     {
-        string loginControl = System.Web.HttpContext.Current.User.Identity.Name.ToString();
+        private string loginControl = System.Web.HttpContext.Current.User.Identity.Name.ToString();
 
         private ISliderService _sliderService;
         private IUserService _userService;
+
         public SliderController(ISliderService sliderService, IUserService userService)
         {
             _sliderService = sliderService;
             _userService = userService;
         }
-
 
         // GET: AdminPanel/Slider
         public ActionResult Index()
@@ -62,15 +62,14 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                 {
                     if (Foto != null)
                     {
-
                         WebImage webImageLarge = new WebImage(Foto.InputStream);
                         FileInfo fileInfoLarge = new FileInfo(Foto.FileName);
                         string newFotoNameLarge = Guid.NewGuid().ToString() + fileInfoLarge.Extension;
                         webImageLarge.Resize(850, 400);
-                        webImageLarge.Save("~"+ConstantParameter.LargeImageFilePath + newFotoNameLarge);
+                        webImageLarge.Save("~" + ConstantParameter.LargeImageFilePath + newFotoNameLarge);
                         slider.SliderImageUrlLarge = ConstantParameter.LargeImageFilePath + newFotoNameLarge;
                     }
-                    int MaxDisplayOrder = _sliderService.Max(x => x.IsActive == true, p => p.DisplayOrder) ?? 0;
+                    int MaxDisplayOrder = _sliderService.Max(x => x.IsDisplay == true, p => p.DisplayOrder) ?? 0;
                     slider.DisplayOrder = ++MaxDisplayOrder;
                     slider.CreatedDate = DateTime.Now;
                     slider.CreatedUserID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).Id;
@@ -139,14 +138,12 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                     _slider.ModifiedDate = DateTime.Now;
                     _slider.ModifiedUserID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).Id;
                     _slider.IsDisplay = slider.IsDisplay;
-                    _slider.IsActive = slider.IsActive;
                     _sliderService.Update(_slider);
                     return RedirectToAction("Index");
                 }
                 return View(slider);
             }
         }
-
 
         // GET: AdminPanel/Slider/Details/5
         public ActionResult Details(int? id)
@@ -201,7 +198,5 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
             _sliderService.Delete(slider);
             return RedirectToAction("Index");
         }
-
-
     }
 }

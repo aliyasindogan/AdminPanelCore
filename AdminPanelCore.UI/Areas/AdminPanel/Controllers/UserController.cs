@@ -1,5 +1,5 @@
 ﻿using AdminPanelCore.BLL.Abstarct;
-using AdminPanelCore.ENTITIES.Abstarct.Enum;
+using AdminPanelCore.ENTITIES.Abstarct.Enums;
 using AdminPanelCore.ENTITIES.ComplexTypes;
 using AdminPanelCore.ENTITIES.Concrete;
 using AdWebTemplate.Business.Abstarct;
@@ -14,10 +14,11 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
         private IUserService _userService;
         private IRoleService _roleService;
         private IUserRoleService _userRoleService;
-        string loginControl = System.Web.HttpContext.Current.User.Identity.Name.ToString();
+        private string loginControl = System.Web.HttpContext.Current.User.Identity.Name.ToString();
+
         public UserController(
-            IUserService userService, 
-            IRoleService roleService, 
+            IUserService userService,
+            IRoleService roleService,
             IUserRoleService userRoleService)
         {
             _userService = userService;
@@ -34,7 +35,7 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
             }
             else
             {
-                int RolID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).RolID;
+                int RolID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).RoleID;
                 return View(_userService.GetUserDetails(RolID));
             }
         }
@@ -70,25 +71,27 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                     if (_userService.Any(x => x.UserName == user.UserName.Trim()) == false)
                     {
                         #region User Add
+
                         user.UserName = user.UserName.Trim(); //Boşluklar alınıyor
-                        int MaxDisplayOrder = _userService.Max(x => x.IsActive == true, p => p.DisplayOrder) ?? 0;
+                        int MaxDisplayOrder = _userService.Max(x => x.IsDisplay == true, p => p.DisplayOrder) ?? 0;
                         user.DisplayOrder = ++MaxDisplayOrder;
                         user.CreatedDate = DateTime.Now;
                         user.CreatedUserID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).Id;
                         user.IsDisplay = true;
-                        user.IsActive = true;
                         _userService.Add(user);
-                        #endregion
+
+                        #endregion User Add
 
                         #region User Rol Add
+
                         UserRole userRole = new UserRole();
                         userRole.UserID = user.Id;
-                        userRole.RolID = user.RolID;
+                        userRole.RoleID = user.RoleID;
                         userRole.CreatedDate = DateTime.Now;
                         userRole.CreatedUserID = user.CreatedUserID;
-                        userRole.IsActive = true;
                         _userRoleService.Add(userRole);
-                        #endregion
+
+                        #endregion User Rol Add
 
                         return RedirectToAction("Index", "User");
                     }
@@ -139,32 +142,34 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                 if (ModelState.IsValid)
                 {
                     #region User Update
+
                     roleGetAll();
                     User _user = _userService.Get(x => x.Id == user.Id);
                     _user.UserName = user.UserName.Trim();
-                    _user.Name = user.Name;
-                    _user.RolID = user.RolID;
-                    _user.SurName = user.SurName;
+                    _user.FirstName = user.FirstName;
+                    _user.RoleID = user.RoleID;
+                    _user.LastName = user.LastName;
                     _user.Email = user.Email;
                     _user.Password = user.Password;
-                    _user.RolID = user.RolID;
+                    _user.RoleID = user.RoleID;
                     _user.IsDisplay = user.IsDisplay;
                     _user.DisplayOrder = user.DisplayOrder;
                     _user.ModifiedDate = DateTime.Now;
                     _user.ModifiedUserID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).Id;
-                    _user.IsActive = user.IsActive;
                     _userService.Update(_user);
-                    #endregion
+
+                    #endregion User Update
 
                     #region User Rol Update
+
                     UserRole _userRole = _userRoleService.GetById(x => x.UserID == user.Id);
                     _userRole.UserID = user.Id;
-                    _userRole.RolID = user.RolID;
+                    _userRole.RoleID = user.RoleID;
                     _userRole.ModifiedDate = DateTime.Now;
                     _userRole.ModifiedUserID = user.CreatedUserID;
-                    _userRole.IsActive = true;
                     _userRoleService.Update(_userRole);
-                    #endregion
+
+                    #endregion User Rol Update
 
                     return RedirectToAction("Index");
                 }
@@ -174,7 +179,7 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
 
         private void roleGetAll()
         {
-            int RolID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).RolID;
+            int RolID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).RoleID;
             if (RolID == (int)Roles.Admin)
                 ViewBag.Rols = _roleService.GetList(x => x.Id == RolID);
             else
@@ -202,7 +207,6 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                 return View(userDetail);
             }
         }
-
 
         // GET: AdminPanel/User/Delete/5
         public ActionResult Delete(int? id)
@@ -239,7 +243,6 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
             else
             {
                 User _user = _userService.Get(x => x.Id == id);
-                _user.IsActive = false;
                 _user.IsDisplay = false;
                 _user.ModifiedDate = DateTime.Now;
                 _user.ModifiedUserID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).Id;
@@ -247,7 +250,5 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                 return RedirectToAction("Index");
             }
         }
-
-
     }
 }

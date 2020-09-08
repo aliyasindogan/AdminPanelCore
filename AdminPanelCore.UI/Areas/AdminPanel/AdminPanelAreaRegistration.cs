@@ -14,11 +14,11 @@ namespace AdminPanelCore.UI.Areas.AdminPanel
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-              context.MapRoute(
-             "AdminPanel_Home",
-              "AdminPanel/Dashboard",
-             new { controller = "Dashboard", action = "Index", id = UrlParameter.Optional }
-            );
+            context.MapRoute(
+           "AdminPanel_Home",
+            "AdminPanel/Dashboard",
+           new { controller = "Dashboard", action = "Index", id = UrlParameter.Optional }
+          );
             context.MapRoute(
                "AdminPanel_Login",
                "Login",

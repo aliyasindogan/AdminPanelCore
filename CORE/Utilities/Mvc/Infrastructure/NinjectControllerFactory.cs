@@ -6,9 +6,10 @@ using System.Web.Routing;
 
 namespace AdminPanelCore.CORE.Utilities.Mvc.Infrastructure
 {
-    public class NinjectControllerFactory : DefaultControllerFactory
+    public class NinjectControllerFactory : System.Web.Mvc.DefaultControllerFactory
     {
-        IKernel _kernel;
+        private IKernel _kernel;
+
         public NinjectControllerFactory(INinjectModule module)
         {
             _kernel = new StandardKernel(module);

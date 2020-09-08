@@ -1,18 +1,21 @@
-﻿using AdminPanelCore.CORE.Entities.Concrete;
+﻿using CORE.Entities.Concrete;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AdminPanelCore.ENTITIES.Concrete
 {
-    [Table("UserRole")]
-    public class UserRole : SoftDeleteEntity
+    public class UserRole : CreatedModifiableEntity
     {
         /// <summary>
         /// Kullanıcı ID
         /// </summary>
         public int UserID { get; set; }
+
         /// <summary>
         /// Rol ID
         /// </summary>
-        public int RolID { get; set; }
+        public int RoleID { get; set; }
+
+        public virtual User User { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

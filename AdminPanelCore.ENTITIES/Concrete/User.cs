@@ -1,34 +1,31 @@
-﻿using AdminPanelCore.CORE.Entities.Abstarct;
-using AdminPanelCore.CORE.Entities.Concrete;
+﻿using CORE.Entities.Concrete;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AdminPanelCore.ENTITIES.Concrete
 {
-    [Table("User")]
-    public class User : SoftDeleteEntity, IDisplayEntity
+    public class User : AuditEntity
     {
         [Required, Display(Name = "Kullanıcı Adı")]
         public string UserName { get; set; }
 
         [Required, Display(Name = "Adı")]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
 
         [Required, Display(Name = "Soyadı")]
-        public string SurName { get; set; }
+        public string LastName { get; set; }
 
         public string Email { get; set; }
 
         [Required, Display(Name = "Şifre")]
         public string Password { get; set; }
 
-        [Required, Display(Name = "Rol")]
-        public int RolID { get; set; }
+        [ForeignKey("Role")]
+        public int RoleID { get; set; }
 
-        [Required, Display(Name = "Sıra No")]
-        public int DisplayOrder { get; set; }
+        public virtual Role Role { get; set; }
 
-        [Required, Display(Name = "Görüntülensin Mi?")]
-        public bool IsDisplay { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

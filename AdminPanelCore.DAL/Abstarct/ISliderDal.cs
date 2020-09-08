@@ -3,7 +3,7 @@ using AdminPanelCore.ENTITIES.Concrete;
 
 namespace AdminPanelCore.DAL.Abstarct
 {
-    public interface ISliderDal:IRepository<Slider>
+    public interface ISliderDal : IRepository<Slider>
     {
     }
 }

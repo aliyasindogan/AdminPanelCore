@@ -75,8 +75,6 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
                         return PartialView(categoryBreadcrumb);
                     }
                 }
-
-
             }
         }
         public ActionResult HeaderPartialView()
@@ -84,14 +82,13 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
             User user = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString());
             if (user != null)
             {
-                ViewBag.AdSoyad = user.Name + " " + user.SurName;
+                ViewBag.AdSoyad = user.FirstName + " " + user.LastName;
                 return PartialView();
             }
             else
             {
                 return RedirectToAction("Login", "Account");
             }
-
         }
         public ActionResult FooterPartialView()
         {

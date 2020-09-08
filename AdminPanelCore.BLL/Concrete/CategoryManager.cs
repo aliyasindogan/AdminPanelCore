@@ -12,6 +12,7 @@ namespace AdminPanelCore.BLL.Concrete
     public class CategoryManager : ICategoryService
     {
         private ICategoryDal _categoryDal;
+
         public CategoryManager(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
@@ -31,6 +32,7 @@ namespace AdminPanelCore.BLL.Concrete
         {
             return _categoryDal.Count(filter);
         }
+
         public void Delete(Category entity)
         {
             throw new NotImplementedException();

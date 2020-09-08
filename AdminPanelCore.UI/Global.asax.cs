@@ -2,8 +2,6 @@
 using AdminPanelCore.CORE.Utilities.Mvc.Infrastructure;
 using AdWebTemplate.Business.DependencyResolvers.Ninject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Principal;
 using System.Threading;
 using System.Web;
@@ -23,7 +21,7 @@ namespace AdminPanelCore.UI
         }
 
         /// <summary>
-        /// Cookie 
+        /// Cookie
         /// </summary>
         public override void Init()
         {
@@ -48,20 +46,15 @@ namespace AdminPanelCore.UI
                 }
 
                 var ticket = FormsAuthentication.Decrypt(encTicket);
-
                 var securityUtlities = new SecurityUtilities();
                 var identity = securityUtlities.FormsAuthTicketToIdentity(ticket);
                 var principal = new GenericPrincipal(identity, identity.Roles);
-
                 HttpContext.Current.User = principal;
                 Thread.CurrentPrincipal = principal;
             }
             catch (Exception)
             {
-
             }
         }
-
-
     }
 }

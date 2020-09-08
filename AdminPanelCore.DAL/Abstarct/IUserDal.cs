@@ -8,7 +8,9 @@ namespace AdminPanelCore.DAL.Abstarct
     public interface IUserDal : IRepository<User>
     {
         List<UserRoleItem> GetUserRoles(User user);
+
         List<UserDetail> GetUserDetails(int RolID);
+
         UserDetail GetByIdUserDetails(int? id);
     }
 }

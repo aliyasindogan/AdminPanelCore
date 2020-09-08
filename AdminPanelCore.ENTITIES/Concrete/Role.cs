@@ -1,18 +1,23 @@
-﻿using AdminPanelCore.CORE.Entities.Abstarct;
-using AdminPanelCore.CORE.Entities.Concrete;
+﻿using CORE.Entities.Abstarct;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AdminPanelCore.ENTITIES.Concrete
 {
-    [Table("Role")]
-    public class Role : SoftDeleteEntity, IDisplayEntity
+    public class Role : IBaseEntity
     {
+        public Role()
+        {
+            Users = new HashSet<User>();
+            UserRoles = new HashSet<UserRole>();
+        }
+
+        public int Id { get; set; }
+
         [Required, Display(Name = "Rol")]
         public string RoleName { get; set; }
-        [Required, Display(Name = "Sıra No")]
-        public int DisplayOrder { get; set; }
-        [Required, Display(Name = "Görüntülensin Mi?")]
-        public bool IsDisplay { get; set; }
+
+        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }
