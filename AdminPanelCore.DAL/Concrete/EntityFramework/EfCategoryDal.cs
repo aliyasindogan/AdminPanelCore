@@ -27,7 +27,10 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
                                   MetaDescription = c.MetaDescription,
                                   MetaKeywords = c.MetaKeywords,
                                   Title = c.Title,
-                                  SeoLink = c.SeoLink
+                                  SeoLink = c.SeoLink,
+                                  IsDisplay = c.IsDisplay,
+                                  CategoryTypeID = c.CategoryTypeID,
+                                  SubCategoryID = c.SubCategoryID,
                               }).FirstOrDefault(x => x.Id == id);
                 return result;
             }

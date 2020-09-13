@@ -123,6 +123,16 @@
     <Content Include="Areas\AdminPanel\Content\pricing.css" />
     <Content Include="Global.asax" />
     <Content Include="img\image-not.png" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
     <Content Include="Areas\AdminPanel\Views\Account\Login.cshtml" />
     <Content Include="Areas\AdminPanel\Views\Category\Create.cshtml" />
@@ -189,6 +199,8 @@
     <Content Include="Areas\AdminPanel\Scripts\jquery-1.10.2.min.map" />
     <Content Include="Areas\AdminPanel\Scripts\jquery-1.9.1.min.map" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -198,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="upload\largeimage\" />
     <Folder Include="upload\middleimage\" />

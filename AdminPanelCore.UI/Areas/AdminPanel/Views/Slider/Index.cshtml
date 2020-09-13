@@ -1,4 +1,4 @@
-﻿@model IEnumerable< AdminPanelCore.ENTITIES.Concrete.Slider>
+﻿@model IEnumerable<AdminPanelCore.ENTITIES.Concrete.Slider>
 
 @{
     ViewBag.Title = "Slider Listesi ";
@@ -8,7 +8,7 @@
         padding: 8px;
         line-height: 1.42857143;
         vertical-align: middle;
-        text-align:center;
+        text-align: center;
         border-top: 1px solid #ddd;
     }
 </style>
@@ -30,66 +30,66 @@
                     @Html.DisplayNameFor(model => model.SliderDescription)
                 </th>
                 @*<th>
-                    @Html.DisplayNameFor(model => model.SliderNewsUrl)
-                </th>*@
+                        @Html.DisplayNameFor(model => model.SliderNewsUrl)
+                    </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.DisplayOrder)
                 </th>
                 @*<th>
-                    @Html.DisplayNameFor(model => model.StartDate)
-                </th>
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </th>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.EndDate)
-                </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.IsDisplay)
                 </th>
-                 
+
                 <th>İşlemler</th>
             </tr>
 
             @foreach (var item in Model)
             {
-            <tr>
-                <td class="m-0">
-                    <img src="@item.SliderImageUrlLarge" alt="@item.SliderTitle" width="100" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SliderTitle)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SliderDescription)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.SliderNewsUrl)
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.DisplayOrder)
-                </td>
-                @*<td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndDate)
-        </td>*@
-                <td>
-                    @if (item.IsDisplay)
-                    {
-                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-                    }
-                    else
-                    {
-                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-                    }
-                </td>
-                
-                <td>
-                    @Html.ActionLink("Düzelt", "Edit", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
-                    @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
-                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
-                </td>
-            </tr>
+                <tr>
+                    <td class="m-0">
+                        <img src="@item.SliderImageUrlLarge" alt="@item.SliderTitle" width="100" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SliderTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SliderDescription)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.SliderNewsUrl)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DisplayOrder)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>*@
+                    <td>
+                        @if (item.IsDisplay)
+                        {
+                            <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                        }
+                        else
+                        {
+                            <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                        }
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Düzelt", "Edit", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
+                        @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
+                        @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-dark btn-xs" })
+                    </td>
+                </tr>
             }
         </table>
     </div>

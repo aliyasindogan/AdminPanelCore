@@ -23,7 +23,7 @@ namespace AdminPanelCore.ENTITIES.ComplexTypes
         [Required, Display(Name = "Rol")]
         public string RoleName { get; set; }
 
-        public int RolID { get; set; }
+        public int RoleID { get; set; }
 
         [Required, Display(Name = "Sıra No")]
         public int DisplayOrder { get; set; }

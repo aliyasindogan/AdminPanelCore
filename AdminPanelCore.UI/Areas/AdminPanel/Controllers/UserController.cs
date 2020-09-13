@@ -57,7 +57,7 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
         // POST: AdminPanel/User/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Name,SurName,Email,Password,RolID,DisplayOrder,IsDisplay,CreatedUserID,CreatedDate,ModifiedUserID,ModifiedDate,IsActive")] User user)
+        public ActionResult Create([Bind(Include = "Id,UserName,Name,SurName,Email,Password,RoleID,DisplayOrder,IsDisplay,CreatedUserID,CreatedDate,ModifiedUserID,ModifiedDate")] User user)
         {
             if (String.IsNullOrEmpty(loginControl))
             {
@@ -179,11 +179,16 @@ namespace AdminPanelCore.UI.Areas.AdminPanel.Controllers
 
         private void roleGetAll()
         {
-            int RolID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).RoleID;
-            if (RolID == (int)Roles.Admin)
-                ViewBag.Rols = _roleService.GetList(x => x.Id == RolID);
-            else
+            int RoleID = _userService.Get(x => x.UserName == System.Web.HttpContext.Current.User.Identity.Name.ToString()).RoleID;
+            if (RoleID == (int)Roles.Admin)
+            {
+                ViewBag.Rols = _roleService.GetList(x => x.Id == (int)Roles.User);
+            }
+
+            if (RoleID == (int)Roles.SystemAdmin)
+            {
                 ViewBag.Rols = _roleService.GetList();
+            }
         }
 
         // GET: AdminPanel/User/Details/5

@@ -26,7 +26,7 @@ namespace AdminPanelCore.BLL.Abstarct
 
         List<UserRoleItem> GetUserRoles(User user);
 
-        List<UserDetail> GetUserDetails(int RolID);
+        List<UserDetail> GetUserDetails(int RoleID);
 
         UserDetail GetByIdUserDetails(int? id);
     }

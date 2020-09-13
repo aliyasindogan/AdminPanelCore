@@ -28,9 +28,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.IsDisplay)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsActive)
-                </th>
+
                 <th>İşlemler</th>
             </tr>
             @foreach (var item in Model)
@@ -53,16 +51,6 @@
                     </td>
                     <td>
                         @if (item.IsDisplay)
-                        {
-                            <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-                        }
-                        else
-                        {
-                            <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-                        }
-                    </td>
-                    <td>
-                        @if (item.IsActive)
                         {
                             <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
                         }

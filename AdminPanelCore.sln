@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORE", "CORE\CORE.csproj", "{053CD139-060C-47F2-B212-C6C1598DA790}"
 EndProject
@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanelCore.UI", "AdminP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18C60E94-08A3-4C5A-80F5-03B43CA44E60}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\AliYasin\Desktop\DatabaseQuery.sql = C:\Users\AliYasin\Desktop\DatabaseQuery.sql
+		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
 Global

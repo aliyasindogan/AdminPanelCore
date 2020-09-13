@@ -7,7 +7,8 @@
 <div class="container-fluid mb-60">
     <div class="icerik">
         <h3 class="sayfaBasligi"><i class="fa fa-eye"></i>&nbsp;C </h3>
-        <hr />
+        <hr class="sayfaBasligi_hr" />
+        <br />
         <div>
             <dl class="dl-horizontal">
                 <dt>
@@ -19,19 +20,19 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.Name)
+                    @Html.DisplayNameFor(model => model.FirstName)
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.Name)
+                    @Html.DisplayFor(model => model.FirstName)
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.SurName)
+                    @Html.DisplayNameFor(model => model.LastName)
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.SurName)
+                    @Html.DisplayFor(model => model.LastName)
                 </dd>
 
                 <dt>
@@ -70,19 +71,6 @@
                 </dt>
                 <dd>
                     @if (Model.IsDisplay)
-                    {
-                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-                    }
-                    else
-                    {
-                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-                    }
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.IsActive)
-                </dt>
-                <dd>
-                    @if (Model.IsActive)
                     {
                         <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
                     }

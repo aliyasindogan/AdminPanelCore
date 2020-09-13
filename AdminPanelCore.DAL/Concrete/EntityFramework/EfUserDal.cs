@@ -34,13 +34,12 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
             }
         }
 
-        public List<UserDetail> GetUserDetails(int RolID)
+        public List<UserDetail> GetUserDetails(int RoleID)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                if (RolID == (int)Roles.Admin)
+                if (RoleID == (int)Roles.Admin)
                 {
-                    //Admin de admin ve web kategorileri geliyor
                     var result = (from u in context.Users
                                   join ur in context.UserRoles on u.Id equals ur.UserID
                                   join r in context.Roles on ur.RoleID equals r.Id
@@ -54,14 +53,14 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
                                       IsDisplay = u.IsDisplay,
                                       Email = u.Email,
                                       Password = u.Password,
-                                      RolID = u.RoleID,
+                                      RoleID = u.RoleID,
                                       RoleName = r.RoleName
-                                  }).Where(x => x.RolID == RolID);
+                                  }).Where(x => x.RoleID == (int)Roles.User || x.RoleID == (int)Roles.Admin);
                     return result.ToList();
                 }
-                else //Developer
+                else
                 {
-                    //Developer da tüm kategoriler geliyor
+                    //SystemAdmin
                     var result = (from u in context.Users
                                   join ur in context.UserRoles on u.Id equals ur.UserID
                                   join r in context.Roles on ur.RoleID equals r.Id
@@ -75,7 +74,7 @@ namespace AdminPanelCore.DAL.Concrete.EntityFramework
                                       IsDisplay = u.IsDisplay,
                                       Email = u.Email,
                                       Password = u.Password,
-                                      RolID = u.RoleID,
+                                      RoleID = u.RoleID,
                                       RoleName = r.RoleName
                                   });
                     return result.ToList();

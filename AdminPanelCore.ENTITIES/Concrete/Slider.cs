@@ -1,7 +1,6 @@
 ﻿using CORE.Entities.Concrete;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AdminPanelCore.ENTITIES.Concrete
 {
@@ -13,7 +12,7 @@ namespace AdminPanelCore.ENTITIES.Concrete
         [Required, Display(Name = "Slider Açıklama")]
         public string SliderDescription { get; set; }
 
-        [Required, Display(Name = "Slider Haber Url")]
+        [Required, Display(Name = "Slider Url")]
         public string SliderNewsUrl { get; set; }
 
         [Display(Name = "Slider By Resim (850x400px)")]

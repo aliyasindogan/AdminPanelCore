@@ -7,9 +7,9 @@
 <div class="container-fluid mb-60">
     <div class="icerik">
         <h3 class="sayfaBasligi"><i class="fa fa-eye"></i>&nbsp;Kategori Detay  </h3>
-        <hr />
+        <hr class="sayfaBasligi_hr" />
+        <br />
         <div>
-
             <dl class="dl-horizontal">
                 <dt>
                     @Html.DisplayNameFor(model => model.CategoryName)
@@ -74,24 +74,13 @@
                 <dd>
                     @Html.DisplayFor(model => model.DisplayOrder)
                 </dd>
+
                 <dt>
                     @Html.DisplayNameFor(model => model.IsDisplay)
                 </dt>
+
                 <dd>
-                     @if (Model.IsDisplay)
-                    {
-                        <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-                    }
-                    else
-                    {
-                        <span class="label label-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-                    }
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.IsActive)
-                </dt>
-                <dd>
-                    @if (Model.IsActive)
+                    @if (Model.IsDisplay)
                     {
                         <span class="label label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
                     }

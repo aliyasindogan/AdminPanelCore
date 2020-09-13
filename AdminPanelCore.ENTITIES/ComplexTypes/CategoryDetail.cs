@@ -12,7 +12,7 @@ namespace AdminPanelCore.ENTITIES.ComplexTypes
         [Display(Name = "AltKategori")]
         public string SubCategoryName { get; set; }
 
-        public int SubCategoryID { get; set; }
+        public int? SubCategoryID { get; set; }
 
         [Display(Name = "Kategori Tipi")]
         public string CategoryTypeName { get; set; }
@@ -26,9 +26,6 @@ namespace AdminPanelCore.ENTITIES.ComplexTypes
 
         [Display(Name = "Meta Keywords")]
         public string MetaKeywords { get; set; }
-
-        [Display(Name = "Aktif Mi")]
-        public bool IsActive { get; set; }
 
         [Display(Name = "Görüntülensin Mi")]
         public bool IsDisplay { get; set; }
